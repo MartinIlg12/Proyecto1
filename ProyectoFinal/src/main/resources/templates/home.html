@@ -7,19 +7,164 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Home</title>
 </head>
+
 <body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Artifika&family=Bebas+Neue&family=Kanit&family=Neucha&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+
+}
+body{
+    font-family: 'Artifika', serif;
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Neucha', cursive;
+    background-color:#030303 ;
+    color: #ffffff;
+}
+.conteiner{
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+.header{
+    background-image: url(https://www.pixground.com/wp-content/uploads/2023/06/Miles-Morales-Swinging-Spider-Man-Across-the-Spider-Verse-4K-Movie-Wallpaper-jpg.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    font-size: 35px;
+    color: #ffffff;
+}
+
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a{
+    font-size: 22px;
+    padding: 20px;
+    color: #030303;
+    display: block;
+}
+.menu .navbar ul li a:hover{
+    color: #ff2f28;
+}
+#menu{
+    display: none;
+}
+.menu-icono{
+    width: 25px;
+}
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+.header-content{
+    display: flex;
+    width: 100%;
+}
+
+.header-1{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-self: flex-end;
+}
+.header-1 img{
+    width: 300px;
+}
+
+.header-2{
+    width: 50%;
+    margin-top: 80px;
+    text-align: end;
+}
+.header-2 h1{
+    color: #ffffff72;
+    font-size: 80px;
+    line-height: 80px;
+}
+.header-2 img{
+    width: 70px;
+
+}
+.btn-1{
+    display: inline-block;
+    padding: 7px 20px;
+    background-color: #ff2f28;
+    color: #ffffff;
+    font-size: 20px;
+}
+.btn-2{
+    width: 110px;
+    display: inline-block;
+    padding: 7px 20px;
+    background-color: #ff2f28;
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.movies{
+    padding: 50px 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+h2{
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+hr{
+    border: 1px solid #ff2f28;
+    width: 50%;
+    margin-bottom: 40px;
+}
+img{
+    height: 250px;
+    width: 250px;
+}
+.box-container-1,
+.box-container-2{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+    </style>
     <header class="header">
         <div class="menu container">
-            <a href="/" class="logo">MediaMovie</a>
+            <a href="/" class="logo">IlguanFilms</a>
             <input type="checkbox" id="menu"/>
             <label for="menu">
-                <img src="data:image/jpeg;base64,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" class="menu-icono" alt="menu">
+                <img src="" class="menu-icono" alt="menu">
             </label>
             <nav class="navbar">
                 <ul>
                     <li><a href="/">Peliculas</a></li>
-                    <li><a href="/">Registro</a></li>
-                    <li><a href="/">Login</a></li>
+                    <li><a href="/registro">Registro</a></li>
+                    <li><a href="/iniciar">Login</a></li>
                 </ul>
             </nav>
             <a href="/iniciar" class="btn-1">Login</a>
